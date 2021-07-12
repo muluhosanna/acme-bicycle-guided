@@ -15,9 +15,7 @@ public BikeColor getColor(){return color;}
   public abstract   int getStartNumber();
    public abstract String getModel();
     public  abstract String getStyle();
-    public void paint(BikeColor color){
-        this.color = color;
-    }
+    public void paint(BikeColor color){ this.color = color; }
     // used for testing the objects during creation
     @Override
     public String toString(){
