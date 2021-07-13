@@ -7,7 +7,11 @@ public interface BikeInterface {
     int getStartNumber();
     String getModel();
     String getStyle();
+    String getSerialNumber();
+    void setSerialNumber(String serial);
     void paint(BikeColor color);
-
+void washFrame();
+void airTires();
+void testRide();
 
 }

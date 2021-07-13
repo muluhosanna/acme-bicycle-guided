@@ -3,13 +3,19 @@ package com.acme.model;
 public class SampleOutput {
     public static void main(String[] args){
         //testingModel();
-        //testingSerialNumberGen();
+        testingSerialNumberGen();
         //testingCustomOption();
-        testingCustomOption2();
+        //testingCustomOption2();
+       // testPrepForSale();
+    }
+    public static void testPrepForSale(){
+        BikeFacade myFacade = new BikeFacade();
+        myFacade.prepareForSale(new VintageBike(new NormalWheel()));
     }
     public static void testingCustomOption2(){
        BikeInterface ccBike = new CrossCountryBike(new WideWheel());
        System.out.println(ccBike);
+       //a+=b which is a= a+b
        ccBike = new WhiteTireOption(ccBike);
        System.out.println(ccBike);
        ccBike = new GoldFrameOption(ccBike);
@@ -39,14 +45,17 @@ public class SampleOutput {
     public static void testingSerialNumberGen(){
         DownhillBike bike = new DownhillBike(new WideWheel());
         SerialNumberGenerator generator = SerialNumberGenerator.getInstance(bike.getModel(), bike.getStartNumber());
+        bike.setSerialNumber(generator.getNextSerial());
+
         System.out.println("Next serial is " + generator.getNextSerial());
         System.out.println("Next serial is " + generator.getNextSerial());
         System.out.println("Next serial is " + generator.getNextSerial());
-      /* SerialNumberGenerator myGen =
+        System.out.println("My bike serial number is "+bike.getSerialNumber());
+       SerialNumberGenerator myGen =
                 SerialNumberGenerator.getInstance(bike.getModel(), generator.getRecentNumber());
         System.out.println("Next serial is " + myGen.getNextSerial());
         System.out.println("Next serial is " + myGen.getNextSerial());
-        System.out.println("Next serial is " + myGen.getNextSerial());*/
+        System.out.println("Next serial is " + myGen.getNextSerial());
 
        // myGen.testObject();
     }
