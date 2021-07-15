@@ -12,6 +12,8 @@ public abstract class AbstractBikeOption extends AbstractBike {
         super(bike.getWheel(),color);
         decoratedBike = bike;
     }
+    public abstract String getOptionType();
+    public abstract float getOptionAmount();
     public final String getSerialNumber(){return decoratedBike.getSerialNumber();}
     public final void setSerialNumber(String serial) { serialNumber = serial;  }
 
@@ -20,4 +22,13 @@ public abstract class AbstractBikeOption extends AbstractBike {
     public final String getModel(){return decoratedBike.getModel();}
 
     public final String getStyle(){return decoratedBike.getStyle();}
+    @Override
+    public String toString(){
+
+        String price = String.format("%21s", "$"+getPrice());
+        return decoratedBike.getClass().getSimpleName() + price +
+                "\nModel #" +getModel()
+                +"\n"+ decoratedBike.getWheel() + "\n"+
+                decoratedBike.getColor() + " frame\n" + "Serial # "+ getSerialNumber();
+    }
 }

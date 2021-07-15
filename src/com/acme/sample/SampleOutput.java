@@ -10,12 +10,17 @@ public class SampleOutput {
         //testingCustomOption2();
        // testPrepForSale();
        // testInventory();
-        testList();
+        //testList();
+        orderBikes();
+    }
+    public static void orderBikes() {
+        SampleOrder order = new SampleOrder();
+        order.welcomeMessage();
     }
     public static void testList(){
         ArrayList<BikeInterface> bike = new ArrayList<>();
         SampleInventory inventory = new SampleInventory();
-        bike.add(inventory.getTouringList().get(0));
+        bike.add (new LeatherSeatOption(inventory.getTouringList().get(0)));
         bike.add(inventory.getCrossCountryList().get(3));
 
         SampleReceipt test = new SampleReceipt(bike);

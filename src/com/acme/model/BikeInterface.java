@@ -8,6 +8,8 @@ public interface BikeInterface {
     String getModel();
     String getStyle();
     String getSerialNumber();
+    String getOptionType();
+    float getOptionAmount();
     void setSerialNumber(String serial);
     void paint(BikeColor color);
 void washFrame();

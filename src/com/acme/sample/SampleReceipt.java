@@ -6,6 +6,7 @@ import java.util.ArrayList;
  * output in the form of a type of receipt
  */
 public class SampleReceipt {
+    private float total = 0.0f;
     ArrayList<BikeInterface> cartList;
     public SampleReceipt(ArrayList<BikeInterface> bikeList) {
         cartList = bikeList;
@@ -39,6 +40,7 @@ public class SampleReceipt {
         for(BikeInterface bike: cartList) {
             System.out.println(bike);
             System.out.println();
+            //check for options
             total += bike.getPrice();
         }
         showStars();
@@ -49,6 +51,13 @@ public class SampleReceipt {
         System.out.print("Total");
         float totalTax = total + ship;
         System.out.printf("%35s%n","$" + totalTax);
+    }
+    private void verifyBikeOption(BikeInterface bike){
+        if (bike.getOptionType() != null){
+            System.out.println(bike.getOptionType());
+            System.out.printf("%18s%n",bike.getOptionAmount());
+            total += bike.getOptionAmount();
+        }
     }
 
     private void showStars() {
