@@ -42,7 +42,9 @@ public BikeColor getColor(){return color;}
     // used for testing the objects during creation
     @Override
     public String toString(){
-        return getClass().getSimpleName() + " with " + wheel + ","+
-                color + " color frame at " + getPrice();
+        String price = String.format("%21s", "$"+getPrice());
+        return getClass().getSimpleName() + price +"\nModel #" +getModel()
+                +"\n"+ wheel + "\n"+
+                color + " frame\n" + "Serial # "+ getSerialNumber();
     }// VintageBike with NormalWheel at 25 inches, RED color frame at $299.99
 }

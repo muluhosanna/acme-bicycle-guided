@@ -1,6 +1,6 @@
 package com.acme.model;
 
-public class CrossCountryBike extends MoutainBike{
+public class CrossCountryBike extends MountainBike {
     public CrossCountryBike(WheelInterface wheel, BikeColor color){
         super(wheel,color);
     }

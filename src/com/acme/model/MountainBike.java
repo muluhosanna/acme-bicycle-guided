@@ -1,7 +1,7 @@
 package com.acme.model;
 
-public abstract class MoutainBike extends AbstractBike{
-    protected MoutainBike(WheelInterface wheel, BikeColor color){
+public abstract class MountainBike extends AbstractBike{
+    protected MountainBike(WheelInterface wheel, BikeColor color){
         super(wheel,color);
     }
     @Override
